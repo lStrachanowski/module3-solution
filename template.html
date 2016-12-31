@@ -1,0 +1,18 @@
+<div class="clear setBlock" ng-if="foundList.checkEmpty()">Please fill search bar</div>
+
+<div class="clear setBlock" ng-if="foundList.noMatch()">No match found!</div>
+
+<div ng-repeat="item in foundList.lista">
+<div class="clear"></div>
+	<div class="media">
+	  <div class="media-left">
+	    <p>{{item.short_name}}</p>
+	  </div>
+	  <div class="media-body">
+	    <h4 class="media-heading">{{item.name}}</h4>
+	    <p>{{item.description}}</p>
+	  </div>
+	  <button class="btn btn-default" ng-click="foundList.onRemove({index: $index});">Don't want this one!</button>
+	</div>
+</div>
+
